@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.home, body.eventfund {
+    font-family: Inter;
+    line-height: 1.6;
+    background-image: url(assets/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+h1, h3, p {
+    text-align: center;
+    color: #f6f6f6;
+    margin-top: 10px;
+}
+
+.contact-btn h3 {
+  text-align: center;
+  margin-top: 10px;
+  color: black;
+}
+
+.btn a {
+  padding: 15px;
+  margin: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: #f6f6f6;
+  border-radius: 25px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+footer {
+    background-color:black;
+    padding: 15px;
+    color: #f6f6f6;
+}
+
+.hero {
+    padding: 15px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/hero.png);
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  display: flex;
+}
+
+ul li a {
+  display: block;
+  color: #f6f6f6;
+  padding: 14px 16px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+ul li a:hover {
+  background-color: #111111;
+}
+
+.impact-text {
+  color: black;
+}
+
+.slideshow-container {
+  max-width: 300px;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+    display: none; 
+}
+
+img {
+    vertical-align: middle;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: #f6f6f6;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.slide-text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+form {
+  width:200px;
+  height:30px;
+  background-color: #f6f6f6;
+  border-radius: 25px;
+  display: flex;
+}
+
+button {
+  background-color: transparent;
+  border: transparent;
+  cursor: pointer;
+}
+
+input {
+  background-color: #f6f6f6;
+  color:black;
+  border-radius: 25px;
+  height: 30px;
+  width: 170px;
+  border: transparent;
+  float: left;
+  display: block;
+  text-align: left;
+  padding: 14px;
+}
+
+.section {
+  background-color:#f6f6f6;
+  border-radius: 15px;
+}

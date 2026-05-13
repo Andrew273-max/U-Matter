@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U Matter - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel ="icon" type="image" href="assets/icon.png">
+</head>
+<body class="home">
+    <header>
+        <ul>
+            <li><a href="event_list.html">Events</a></li>
+            <li><a href="fund_list.html">Funds</a></li>
+            <li><a href="login_signup.html">Log in/Sign up</a></li>
+        </ul>
+    </header>
+    <div class="hero">
+        <h1>U Matter</h1>
+        <h3>Organize. Protest. Win.</h3>
+    </div>
+    <h3>Homepage</h3>
+    <p>U Matter is a platform aimed at organizing and securing volunteering activities for Ukraine.<br>
+        Our goal is to help volunteers across both Ukraine and Europe to have a structured approach to their work, have the ability of easily contacting potential collaborators, and raise awareness about the ongoing war in Ukraine.</p>
+    <div class="btn">
+        <a href="fund_list.html">Donate</a>
+        <a href="event_list.html">Participate</a>
+    </div>
+    <section class="impact">
+        <div class="impact-text">
+            <h3>Our impact</h3>
+            <p>Something here about impact</p><br>
+        </div>
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="assets/img1.jpg" style="width:100%">
+                <div class="slide-text"><b>Helping volunteeers across Netherlands</b></div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="assets/img2.jpg" style="width:100%">
+                <div class="slide-text"><b>Verifying each event and fund</b></div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="assets/img3.jpg" style="width:100%">
+                <div class="slide-text"><b>Forming a community</b></div>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+        </div>
+    </section>
+    <div class="contact-btn">
+        <h3>Have any questions?<br>Get in touch with us!</h3>
+        <div class="btn">
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+    <footer>
+        <p>U Matter © 2026 All rights reserved</p>
+    </footer>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+</body>
+</html>
