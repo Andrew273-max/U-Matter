@@ -13,10 +13,20 @@ body.home, body.eventfund {
     overflow-x: hidden;
 }
 
-h1, h3, p {
+
+h1, h2, h3, p {
     text-align: center;
     color: #f6f6f6;
-    margin-top: 10px;
+    margin: 10px;
+}
+
+h2-5 {
+  text-align: center;
+  color: #f6f6f6;
+  margin-top: 10px;
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .contact-btn h3 {
@@ -147,7 +157,7 @@ img {
   margin: 10px;
 }
 
-form {
+.search-bar form {
   width:200px;
   height:30px;
   background-color: #f6f6f6;
@@ -155,14 +165,13 @@ form {
   display: flex;
 }
 
-button {
+.search-bar button {
   background-color: transparent;
   border: transparent;
   cursor: pointer;
 }
 
 input {
-  background-color: #f6f6f6;
   color:black;
   border-radius: 25px;
   height: 30px;
@@ -174,7 +183,66 @@ input {
   padding: 14px;
 }
 
-.section {
-  background-color:#f6f6f6;
-  border-radius: 15px;
+.form-message {
+    margin-top: 1rem;
+    text-align: center;
+    display: none;
+}
+
+.form-message.success {
+    color: #2E8B57;
+}
+
+.form-message.error {
+    color: #EF5350;
+}
+
+.contact-form {
+    max-width: 300px;
+    margin: 0 auto;
+    background: #f6f6f6;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: Inter;
+}
+
+.form-group textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.message {
+  align-items: center;
+}
+
+.message button {
+  background-color: black;
+  color: #f6f6f6;
+  padding: 15px;
+  width: 150px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-family: Inter;
+  display: flex;
+  justify-content: center;
 }
