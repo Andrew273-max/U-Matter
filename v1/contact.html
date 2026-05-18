@@ -6,13 +6,14 @@
     <title>U Matter - Events</title>
     <link rel="stylesheet" href="styles.css">
     <link rel ="icon" type="image" href="assets/icon.png">
+    
 </head>
 <body class="home">
     <header>
         <ul>
+            <li><a href="index.html">&#10094; Go back</a></li>
             <li><a href="event_list.html">Events</a></li>
             <li><a href="fund_list.html">Funds</a></li>
-            <li><a href="login_signup.html">Log in/Sign up</a></li>
         </ul>
     </header>
     <div class="hero">
@@ -21,11 +22,10 @@
     </div>
     
     <section class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Get In Touch</h2>
-            </div>
-            
+        <div class="section-title">
+            <h2-5>Get In Touch</h2-5>
+        </div>
+        <br><div class="container">
             <div class="contact-form">
                 <form id="contactForm">
                     <div class="form-group">
@@ -46,7 +46,7 @@
                     <div class="form-group">
                         <label for="topic">Topic</label>
                         <select id="topic" name="topic">
-                            <option value="">Please select what the message is about:</option>
+                            <option value="">What the message is about?</option>
                             <option value="events">Event management</option>
                             <option value="funds">Fund management</option>
                             <option value="account">Account</option>
@@ -57,14 +57,19 @@
                     
                     <div class="form-group">
                         <label for="message">Your Message *</label>
-                        <textarea id="message" name="message" placeholder="Tell us about your waste management needs..." required></textarea>
+                        <textarea id="message" name="message" placeholder="Tell us what problem or suggestion you have..." required></textarea>
                     </div>
                     
-                    <button type="submit" class="btn btn-full">Send Message</button>
+                    <div class="message"><button type="submit" >Send Message</button></div>
                 </form>
                 <div id="formMessage" class="form-message"></div>
             </div>
         </div>
     </section>
+    <br><footer>
+        <p>U Matter © 2026 All rights reserved</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="js/specific/contact.js"></script>
 </body>
 </html>
