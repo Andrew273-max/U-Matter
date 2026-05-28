@@ -4,8 +4,8 @@
     box-sizing: border-box;
 }
 
-body.home, body.eventfund {
-    font-family: Inter;
+body {
+    font-family: "Inter", serif;    
     line-height: 1.6;
     background-image: url(assets/background.png);
     background-repeat: no-repeat;
@@ -13,6 +13,17 @@ body.home, body.eventfund {
     overflow-x: hidden;
 }
 
+body.home, body.eventfund {
+    background-image: url(assets/background.png);
+}
+
+body.info {
+    background-image: url(assets/background-2.png);
+}
+
+body.other {
+    background-image: url(assets/background-3.png);
+}
 
 h1, h2, h3, p {
     text-align: center;
