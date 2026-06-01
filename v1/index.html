@@ -4,16 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>U Matter - Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel ="icon" type="image" href="assets/icon.png">
 </head>
 <body class="home">
     <header>
-        <ul>
-            <li><a href="event_list.html">Events</a></li>
-            <li><a href="fund_list.html">Funds</a></li>
-            <li><a href="login_signup.html">Log in/Sign up</a></li>
-        </ul>
+        <div class="topnav">
+            <a href="index.html" class="active">U Matter</a>
+            <!-- Navigation links (hidden by default) -->
+            <div id="myLinks">
+                <a href="login_signup.html">Log in</a>
+                <a href="fund_list.html">Funds</a>
+                <a href="event_list.html">Events</a>
+                <a href="contact.html">Contact us</a>
+            </div>
+            <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
     </header>
     <div class="hero">
         <h1>U Matter</h1>
@@ -29,7 +42,7 @@
     <section class="impact">
         <div class="impact-text">
             <h3>Our impact</h3>
-            <p>Something here about impact</p><br>
+            <p>Something here about impact</p>
         </div>
         <div class="slideshow-container">
             <div class="mySlides fade">
@@ -50,7 +63,6 @@
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
-            <br>
         </div>
     </section>
     <div class="contact-btn">
@@ -62,6 +74,17 @@
     <footer>
         <p>U Matter © 2026 All rights reserved</p>
     </footer>
+
+<script>
+    function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
 
 <script>
 let slideIndex = 1;
