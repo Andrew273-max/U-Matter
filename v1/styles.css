@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: "Inter", serif;    
+  font-family: "Inter", serif;    
     line-height: 1.6;
     background-image: url(assets/background.png);
     background-repeat: no-repeat;
@@ -40,6 +40,37 @@ h2-5 {
   font-weight: bold;
 }
 
+.topnav {
+  overflow: hidden;
+  background-color: #000000;
+  position: relative;
+}
+
+.topnav #myLinks {
+  display: none;
+}
+
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+.topnav a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.active {
+  background-color: #000000;
+  color: #f6f6f6;
+}
+
 .contact-btn h3 {
   text-align: center;
   margin-top: 10px;
@@ -54,7 +85,7 @@ h2-5 {
   align-items: center;
   background-color: black;
   color: #f6f6f6;
-  border-radius: 25px;
+  border-radius: 10px;
   text-decoration: none;
   cursor: pointer;
 }
@@ -172,7 +203,7 @@ img {
   width:200px;
   height:30px;
   background-color: #f6f6f6;
-  border-radius: 25px;
+  border-radius: 10px;
   display: flex;
 }
 
@@ -184,7 +215,7 @@ img {
 
 input {
   color:black;
-  border-radius: 25px;
+  border-radius: 10px;
   height: 30px;
   width: 170px;
   border: transparent;
@@ -213,7 +244,7 @@ input {
     margin: 0 auto;
     background: #f6f6f6;
     padding: 15px;
-    border-radius: 8px;
+    border-radius: 3px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
@@ -251,7 +282,7 @@ input {
   color: #f6f6f6;
   padding: 15px;
   width: 150px;
-  border-radius: 25px;
+  border-radius: 10px;
   cursor: pointer;
   font-family: Inter;
   display: flex;
