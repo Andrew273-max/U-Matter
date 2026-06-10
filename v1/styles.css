@@ -31,6 +31,17 @@ h1, h2, h3, p {
     margin: 10px;
 }
 
+.profile p {
+  color: black;
+  text-align: left;
+  font-size: small;
+}
+
+h4, h5 {
+  color: black;
+  text-align: center;
+}
+
 h2-5 {
   text-align: center;
   color: #f6f6f6;
@@ -58,12 +69,12 @@ h2-5 {
   display: block;
 }
 
-.topnav a.icon {
+.topnav a.menu {
   background: black;
   display: block;
   position: absolute;
   right: 0;
-  top: 0;
+  top: 10%;
 }
 
 .active {
@@ -77,7 +88,7 @@ h2-5 {
   color: black;
 }
 
-.btn a {
+.btn a, .account {
   padding: 15px;
   margin: 15px;
   display: flex;
@@ -138,10 +149,6 @@ ul li a:hover {
 
 .mySlides {
     display: none; 
-}
-
-img {
-    vertical-align: middle;
 }
 
 .prev, .next {
@@ -216,7 +223,7 @@ img {
 input {
   color:black;
   border-radius: 10px;
-  height: 30px;
+  height: 2,5rem;
   width: 170px;
   border: transparent;
   float: left;
@@ -239,20 +246,45 @@ input {
     color: #EF5350;
 }
 
-.contact-form {
+.contact-form, .login-form, .profile {
     max-width: 300px;
     margin: 0 auto;
     background: #f6f6f6;
     padding: 15px;
     border-radius: 3px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+}
+
+.login {
+  margin: 10px;
+  margin-top: 20px;
+}
+
+.login button {
+  justify-self: center;
+}
+
+.login input {
+  width: 100%
+}
+
+img  {
+  display: block;
+  margin: auto;
+}
+
+.pic  {
+  width: 40%;
+  padding: 1px;
+  background-color: white;
 }
 
 .form-group {
     margin-bottom: 1.5rem;
 }
 
-.form-group label {
+.form-group label, .login label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: bold;
@@ -266,6 +298,7 @@ input {
   border: 1px solid #ddd;
   border-radius: 5px;
   font-family: Inter;
+  margin-bottom: 0.5rem;
 }
 
 .form-group textarea {
@@ -274,17 +307,25 @@ input {
 }
 
 .message {
-  align-items: center;
-}
-
-.message button {
+  justify-self: center;
   background-color: black;
   color: #f6f6f6;
   padding: 15px;
-  width: 150px;
+  width: 100%;
   border-radius: 10px;
   cursor: pointer;
   font-family: Inter;
   display: flex;
   justify-content: center;
+}
+
+.back {
+  padding:0;
+  margin:0;
+  width:40px;
+  height:40px;
+}
+
+.fund-event-info h2, .fund-event-info p {
+  color:black
 }
