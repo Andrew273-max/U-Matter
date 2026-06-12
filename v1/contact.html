@@ -3,18 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>U Matter - Events</title>
+    <title>U Matter - Contact us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel ="icon" type="image" href="assets/icon.png">
-    
 </head>
 <body class="home">
     <header>
-        <ul>
-            <li><a href="index.html">&#10094; Go back</a></li>
-            <li><a href="event_list.html">Events</a></li>
-            <li><a href="fund_list.html">Funds</a></li>
-        </ul>
+        <div class="topnav">
+            <a href="index.html" class="active"><img class="back" src="assets/icon.png"></a>
+            <div id="myLinks">
+                <a href="login.php" id="authLink">Log in</a>
+                <a href="fund_list.php">Funds</a>
+                <a href="event_list.php">Events</a>
+                <a href="contact.html">Contact us</a>
+            </div>
+            <a href="javascript:void(0);" class="menu" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
     </header>
     <div class="hero">
         <h1>U Matter</h1>
@@ -25,50 +35,44 @@
         <div class="section-title">
             <h2-5>Get In Touch</h2-5>
         </div>
-        <br><div class="container">
-            <div class="contact-form">
+        <br><div class="contact-form">
                 <form id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                    <br><br>
                     
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                    <br><br>
                     
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone">
-                    </div>
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                    <br><br>
                     
-                    <div class="form-group">
-                        <label for="topic">Topic</label>
-                        <select id="topic" name="topic">
-                            <option value="">What the message is about?</option>
-                            <option value="events">Event management</option>
-                            <option value="funds">Fund management</option>
-                            <option value="account">Account</option>
-                            <option value="bugs">Bugs</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
+                    <label for="topic">Topic</label>
+                    <select id="topic" name="topic">
+                        <option value="">What the message is about?</option>
+                        <option value="events">Event management</option>
+                        <option value="funds">Fund management</option>
+                        <option value="account">Account</option>
+                        <option value="bugs">Bugs</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <br><br>
                     
-                    <div class="form-group">
-                        <label for="message">Your Message *</label>
-                        <textarea id="message" name="message" placeholder="Tell us what problem or suggestion you have..." required></textarea>
-                    </div>
-                    
-                    <div class="message"><button type="submit" >Send Message</button></div>
+                    <label for="message">Your Message *</label>
+                    <textarea id="message" name="message" placeholder="Tell us what problem or suggestion you have..." required></textarea>
+                    <br><br>
+
+                    <button class="message" type="submit" >Send Message</button>
                 </form>
                 <div id="formMessage" class="form-message"></div>
             </div>
-        </div>
     </section>
     <br><footer>
         <p>U Matter © 2026 All rights reserved</p>
     </footer>
+    <script src="js/shared/hamburger_menu.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="js/specific/contact.js"></script>
 </body>
