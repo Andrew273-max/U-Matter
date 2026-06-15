@@ -14,18 +14,6 @@ body {
     overflow-x: hidden;
 }
 
-body.home, body.eventfund {
-    background-image: url(assets/background.png);
-}
-
-body.info {
-    background-image: url(assets/background-2.png);
-}
-
-body.other {
-    background-image: url(assets/background-3.png);
-}
-
 h1, h2, h3, p {
     text-align: center;
     color: #f6f6f6;
