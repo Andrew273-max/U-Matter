@@ -65,11 +65,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="styles.css">
     <link rel ="icon" type="image" href="assets/icon.png">
 </head>
-<body class="other">
+<body>
+<div class="app">
     <header>
         <div class="topnav">
             <a href="index.html" class="active"><img class="back" src="assets/icon.png"></a>
             <div id="myLinks">
+                <a href="index.html">Home</a>
                 <a id="authLink" href="login.php">Log in</a>
                 <a href="fund_list.php">Funds</a>
                 <a href="event_list.php">Events</a>
@@ -90,33 +92,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label for="pass">Password</label>
             <input type="password" id="pass" name="pass" required>
             <br><br>
-            <button class="account" type="submit">Login</button>
+            <button class="message" type="submit">Login</button>
         </form>
         <br><br>
-        <h4>Don't have an account?</h4>
-        <a class="account" href="signup.php">Sign up</a>
     </div>
+
+    <br><h4>Don't have an account?</h4>
+    <a class="message" href="signup.php">Sign up</a><br>
 
     <footer>
         <p>U Matter © 2026 All rights reserved</p>
     </footer>
+</div>
+
 <script src="js/shared/hamburger_menu.js"></script>
 </body>
 </html>
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log in</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel ="icon" type="image" href="assets/icon.png">
-</head>
-<body>
-    
-</body>
-</html> -->
