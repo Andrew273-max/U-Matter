@@ -11,38 +11,43 @@
     <link rel="stylesheet" href="styles.css">
     <link rel ="icon" type="image" href="assets/icon.png">
 </head>
-<body class="home">
+<body>
+<div class="app">
     <header>
         <div class="topnav">
-            <a href="index.html" class="active">U Matter</a>
+            <a href="index.html" class="active"><img class="back" src="assets/icon.png"></a>
             <!-- Navigation links (hidden by default) -->
             <div id="myLinks">
-                <a href="login_signup.html">Log in</a>
-                <a href="fund_list.html">Funds</a>
-                <a href="event_list.html">Events</a>
+                <a href="index.html">Home</a>
+                <a href="login.php" id="authLink">Log in</a>
+                <a href="fund_list.php">Funds</a>
+                <a href="event_list.php">Events</a>
                 <a href="contact.html">Contact us</a>
             </div>
             <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <a href="javascript:void(0);" class="menu" onclick="myFunction()">
                 <i class="fa fa-bars"></i>
             </a>
         </div>
     </header>
     <div class="hero">
         <h1>U Matter</h1>
-        <h3>Organize. Protest. Win.</h3>
+        <h3>Join. Organize. Win.</h3>
     </div>
     <h3>Homepage</h3>
     <p>U Matter is a platform aimed at organizing and securing volunteering activities for Ukraine.<br>
         Our goal is to help volunteers across both Ukraine and Europe to have a structured approach to their work, have the ability of easily contacting potential collaborators, and raise awareness about the ongoing war in Ukraine.</p>
     <div class="btn">
-        <a href="fund_list.html">Donate</a>
-        <a href="event_list.html">Participate</a>
+        <a href="fund_list.php">Donate</a>
+        <a href="event_list.php">Participate</a>
     </div>
     <section class="impact">
         <div class="impact-text">
             <h3>Our impact</h3>
-            <p>Something here about impact</p>
+            <p>Instead of scattered posts and missed opportunities, everything is in one place. 
+                It makes it easier to act, even on a busy day. Easier to care, in a practical way.
+                Small actions add up, and slowly, support for Ukraine from across the world stops feeling distant. It becomes something organized, visible, something real.
+                <br><b>And that makes all the difference.</b></p>
         </div>
         <div class="slideshow-container">
             <div class="mySlides fade">
@@ -62,7 +67,6 @@
 
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            </div>
         </div>
     </section>
     <div class="contact-btn">
@@ -74,17 +78,8 @@
     <footer>
         <p>U Matter © 2026 All rights reserved</p>
     </footer>
-
-<script>
-    function myFunction() {
-  var x = document.getElementById("myLinks");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
-}
-</script>
+</div>
+<script src="js/shared/hamburger_menu.js"></script>
 
 <script>
 let slideIndex = 1;
