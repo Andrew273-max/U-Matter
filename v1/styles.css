@@ -5,13 +5,41 @@
     box-sizing: border-box;
 }
 
+.app {
+  width: 100%;
+  max-width: 430px;   
+  min-height: 100vh;
+  margin: 0 auto;
+  background-image: url(assets/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-x: clip;
+  display: flex;
+  flex-direction: column;
+}
+
+.second-app {
+  width: 100%;
+  max-width: 430px;   
+  min-height: 100vh;
+  margin: 0 auto;
+  background-image: url(assets/background-2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-x: clip;
+  display: flex;
+  flex-direction: column;
+}
+
+
 body {
-  font-family: "Inter", serif;    
+    font-family: "Inter", serif;    
     line-height: 1.6;
-    background-image: url(assets/background.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow-x: hidden;
+    background-color:#ddd;
+}
+
+.second {
+  background-image: url(assets/background-2.png);
 }
 
 h1, h2, h3, p {
@@ -42,12 +70,15 @@ ul {
   display: flex;
 }
 
-ul li a {
+.topnav a,
+.btn a {
   display: block;
   color: #f6f6f6;
-  padding: 14px 16px;
+  padding: 10px 12px;
+  border: 1px solid black;
   text-decoration: none;
   cursor: pointer;
+  font-size: smaller;
 }
 
 ul li a:hover {
@@ -110,11 +141,13 @@ header {
 }
 
 
+
 /* footer */
 footer {
     background-color:black;
     padding: 5px;
     color: #f6f6f6;
+    margin-top: auto;
 }
 
 
@@ -127,10 +160,16 @@ footer {
   max-width: 300px;
   position: relative;
   margin: auto;
+  border-radius: 10px;
+  border: 1px solid black;
 }
 
 .mySlides {
-    display: none; 
+    display: none;
+}
+
+.mySlides img {
+  border-radius:10px;
 }
 
 .prev, .next {
@@ -224,6 +263,215 @@ footer {
   height:40px;
 }
 
+/* events list grid */
+.event-list{
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.event-card{
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.event-link{
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.event-image{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+
+.overlay{
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right,rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.9) 100%);
+}
+
+.event-info{
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  transform: translateY(-50%);
+  text-align: right;
+  color: white;
+  z-index: 2;
+}
+
+.event-info h3{
+  font-size: 2rem;
+  margin: 0;
+}
+
+.event-info span{
+  font-size: 1.2rem;
+}
+
+
+/*funds list grid*/
+.fund-list{
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0px;
+    padding: 10px;
+    background-color: transparent;
+    justify-items: center;
+}
+
+.fund-card{
+    position: relative;
+    width: 80%;
+    overflow: hidden;
+    margin-bottom:15px;
+}
+
+.fund-link{
+    display: block;
+    position: relative;
+    text-decoration: none;
+}
+
+.fund-image{
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    border: solid 2px black;
+}
+
+.fund-overlay{
+    background: linear-gradient(to bottom,rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.9) 100%);
+    padding: 5px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    border-radius: 10px;
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.fund-overlay h4{
+    color: white;
+    text-align: center;
+}
+
+
+/*event and fund info*/
+.top-section-info, .fund-right-info {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.fund-right-info {
+  margin-left:10%
+}
+
+.top-section-info h3, .top-section-info h5 {
+  color:white;
+  text-align:left;
+  margin-left:10%;
+}
+
+.circle {
+  width:180px;
+  height:160px;
+  margin-right: 5%;
+  text-align:center;
+  align-content: center;
+  justify-self:left;
+  background-color: #ddd;
+  border-radius: 100%;
+}
+
+.hero-text {
+  margin-top:1rem;
+  margin-left:1rem;
+}
+
+.hero-text h5, .hero-text h3 {
+  color: white;
+  text-align: left;
+  margin:0;
+}
+
+.hero-image {
+    width: 50%;
+    height: 40%;
+    object-fit: cover;
+    justify-self: right;
+    margin-top: 1.5rem;
+    border-radius: 10px;
+}
+
+.middle-left-info {
+  margin-top: 10%;
+  margin-left: 5%;
+}
+
+.middle-left-info .btn a {
+  background-color: black;
+  color: #f6f6f6;
+}
+
+.middle-left-info h3, .middle-left-info p {
+  color: black;
+  text-align: left;
+}
+
+.middle-right-info h3, .middle-right-info p{
+  color: white;
+  justify-self: right;
+  text-align:right;
+}
+
+.middle-right-info {
+  margin-right: 5%;
+}
+
+.use {
+  justify-self: right;
+  margin-top:10px;
+}
+
+.fund-info-pic {
+  width:50%;
+  border-radius:10px;
+  border: solid 1px black;
+  justify-self: right;
+}
+
+.fund-right-info p {
+  text-align:right;
+}
+
+
 
 /*contact and creation forms + login/signup*/
 label {
@@ -238,6 +486,7 @@ input, textarea, select {
   border-radius: 5px;
   padding: 0.8rem;
   font-family: Inter;
+  background-color:#f6f6f6;
   margin-bottom: 0.5rem;
 }
 
@@ -289,11 +538,12 @@ textarea {
 .contact-form, .login-form, .profile {
     max-width: 300px;
     margin: 0 auto;
-    background: #f6f6f6;
+    background: #f6f6f6c3;
     padding: 15px;
     border-radius: 3px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     margin-bottom: 15px;
+    border: 1px solid black;
 }
 
 .login {
@@ -312,9 +562,11 @@ textarea {
 .message {
   justify-self: center;
   text-decoration: none;
-  background-color: black;
-  color: #f6f6f6;
+  background-color: #f6f6f6;
+  color: black;
   padding: 10px;
+  margin:auto;
+  border: 1px solid black;
   width: 50%;
   border-radius: 10px;
   cursor: pointer;
@@ -336,6 +588,7 @@ textarea {
   height: 100px;;
   overflow: hidden;
   justify-self: center;
+  margin:auto;
   border-radius: 100%;
   border: 1px solid white;
 }
@@ -344,9 +597,4 @@ textarea {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-/*specific styles*/
-.fund-event-info h2, .fund-event-info p {
-  color:black
 }
