@@ -13,11 +13,13 @@
     <link rel="stylesheet" href="styles.css">
     <link rel ="icon" type="image" href="assets/icon.png">
 </head>
-<body class="eventfund">
+<body>
+<div class="app">
     <header>
         <div class="topnav">
             <a href="index.html" class="active"><img class="back" src="assets/icon.png"></a>
             <div id="myLinks">
+                <a href="index.html">Home</a>
                 <a href="login.php" id="authLink">Log in</a>
                 <a href="fund_list.php">Funds</a>
                 <a href="event_list.php">Events</a>
@@ -44,19 +46,23 @@
             </form>
         </div>
     </div>
-    <ul id="fund-list" class="fund-event-list">
+    <ul id="fund-list" class="fund-list">
         <?php
         while($row = $result->fetch_assoc()) {
-            echo "
+        echo "
+        <li class='fund-card'>
             <a href='fund_info.php?id={$row['id']}' class='fund-link'>
-                <li class='fund-card'>
-                    <div class='fund-card-image'></div>
-                    <div class='fund-card-overlay'>
-                        <h3>{$row['name']}</h3>
-                    </div>
-                </li>
+                <img 
+                    src='{$row['eligibility']}'
+                    alt='{$row['name']}'
+                    class='fund-image'
+                >
+                <div class='fund-overlay'>
+                    <h4>{$row['name']}</h4>
+                </div>
             </a>
-            ";
+        </li>
+        ";
         }
         ?>
     </ul>
@@ -66,7 +72,8 @@
     <footer>
         <p>U Matter © 2026 All rights reserved</p>
     </footer>
-    
+</div>
+
 <script src="js/shared/hamburger_menu.js"></script> 
 </body>
 </html>
