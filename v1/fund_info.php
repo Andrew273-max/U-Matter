@@ -31,11 +31,13 @@ $fund = $result->fetch_assoc();
     <link rel="stylesheet" href="styles.css">
     <link rel ="icon" type="image" href="assets/icon.png">
 </head>
-<body class="info">
+<body>
+<div class="second-app">
     <header>
         <div class="topnav">
             <a href="index.html" class="active"><img class="back" src="assets/icon.png"></a>
             <div id="myLinks">
+                <a href="index.html">Home</a>
                 <a href="login.php" id="authLink">Log in</a>
                 <a href="fund_list.php">Funds</a>
                 <a href="event_list.php">Events</a>
@@ -46,33 +48,46 @@ $fund = $result->fetch_assoc();
             </a>
         </div>
     </header>
-    <div class="details-container">
-        <div class="top-section">
-            <div class="fund-event-info">
-                <h1><?php echo $fund['name']; ?></h1><br>
-
-                <h2>Purpose of the fund</h2>
-                <p><?php echo $fund['purpose']; ?></p>
-
-                <h2>Needed amount</h2>
-                <p>€<?php echo $fund['fund_goal']; ?></p>
-
-                <h2>Organizer</h2>
-                <p><?php echo $fund['organizer']; ?></p>
-
-                <h2>End date</h2>
-                <p><?php echo $fund['end_date']; ?></p>
+    <section class="fund-event-info">
+        <div class="top-section-info">
+            <div class="text">
+                <h3><?php echo $fund['name']; ?></h3>
+                <h5>Needed amount: €<?php echo $fund['fund_goal']; ?></h5>
+                <h5>Gathering money until <?php echo $fund['end_date']; ?></h5>
             </div>
-            <div class="fund-image"></div>
+
+            <div class="circle">Diagram</div>
         </div>
-        <div class="description-section">
-            <h2>Use of the raised money</h2>
-            <p><?php echo $fund['description']; ?></p>
+        <div class="middle-left-info">
+            <h5>Are you one of the organizers?</h5>
+            <div class="btn"><a href="login.php">Log in</a></div>
+            
+            <h3>Purpose of the fund</h3>
+            <p><?php echo $fund['purpose']; ?></p>
+
+            <h3>Organizer</h3>
+            <p><?php echo $fund['organizer']; ?></p>
         </div>
-    </div>
+
+        <br><h3 class="use">Use of the raised money</h3>
+
+        <div class="fund-right-info">
+            
+            <p><?php echo $fund['description']; ?></p><br>
+
+            <img class="fund-info-pic"
+                src="<?php echo $fund['eligibility']; ?>"
+                alt="<?php echo $fund['name']; ?>"
+                class="fund-image"
+            ><br>
+        </div>
+    </section>
+
     <footer>
         <p>U Matter © 2026 All rights reserved</p>
     </footer>
+</div>
+
 <script src="js/shared/hamburger_menu.js"></script>
 </body>
 </html>
