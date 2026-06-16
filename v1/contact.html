@@ -11,67 +11,70 @@
     <link rel="stylesheet" href="styles.css">
     <link rel ="icon" type="image" href="assets/icon.png">
 </head>
-<body class="home">
-    <header>
-        <div class="topnav">
-            <a href="index.html" class="active"><img class="back" src="assets/icon.png"></a>
-            <div id="myLinks">
-                <a href="login.php" id="authLink">Log in</a>
-                <a href="fund_list.php">Funds</a>
-                <a href="event_list.php">Events</a>
-                <a href="contact.html">Contact us</a>
+<body>
+    <div class="app">
+        <header>
+            <div class="topnav">
+                <a href="index.html" class="active"><img class="back" src="assets/icon.png"></a>
+                <div id="myLinks">
+                    <a href="index.html">Home</a>
+                    <a href="login.php" id="authLink">Log in</a>
+                    <a href="fund_list.php">Funds</a>
+                    <a href="event_list.php">Events</a>
+                    <a href="contact.html">Contact us</a>
+                </div>
+                <a href="javascript:void(0);" class="menu" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
             </div>
-            <a href="javascript:void(0);" class="menu" onclick="myFunction()">
-                <i class="fa fa-bars"></i>
-            </a>
+        </header>
+        <div class="hero">
+            <h1>U Matter</h1>
+            <h3>Join. Organize. Win.</h3>
         </div>
-    </header>
-    <div class="hero">
-        <h1>U Matter</h1>
-        <h3>Organize. Protest. Win.</h3>
-    </div>
-    
-    <section class="section">
-        <div class="section-title">
-            <h2-5>Get In Touch</h2-5>
-        </div>
-        <br><div class="contact-form">
-                <form id="contactForm">
-                    <label for="name">Full Name *</label>
-                    <input type="text" id="name" name="name" required>
-                    <br><br>
-                    
-                    <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="email" required>
-                    <br><br>
-                    
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone">
-                    <br><br>
-                    
-                    <label for="topic">Topic</label>
-                    <select id="topic" name="topic">
-                        <option value="">What the message is about?</option>
-                        <option value="events">Event management</option>
-                        <option value="funds">Fund management</option>
-                        <option value="account">Account</option>
-                        <option value="bugs">Bugs</option>
-                        <option value="other">Other</option>
-                    </select>
-                    <br><br>
-                    
-                    <label for="message">Your Message *</label>
-                    <textarea id="message" name="message" placeholder="Tell us what problem or suggestion you have..." required></textarea>
-                    <br><br>
+        
+        <section class="section">
+            <div class="section-title">
+                <h2-5>Get In Touch</h2-5>
+            </div>
+            <br><div class="contact-form">
+                    <form id="contactForm">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                        <br><br>
+                        
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                        <br><br>
+                        
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                        <br><br>
+                        
+                        <label for="topic">Topic</label>
+                        <select id="topic" name="topic">
+                            <option value="">What the message is about?</option>
+                            <option value="events">Event management</option>
+                            <option value="funds">Fund management</option>
+                            <option value="account">Account</option>
+                            <option value="bugs">Bugs</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <br><br>
+                        
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" name="message" placeholder="Tell us what problem or suggestion you have..." required></textarea>
+                        <br><br>
 
-                    <button class="message" type="submit" >Send Message</button>
-                </form>
-                <div id="formMessage" class="form-message"></div>
-            </div>
-    </section>
-    <br><footer>
-        <p>U Matter © 2026 All rights reserved</p>
-    </footer>
+                        <button class="message" type="submit" >Send Message</button>
+                    </form>
+                    <div id="formMessage" class="form-message"></div>
+                </div>
+        </section>
+        <br><footer>
+            <p>U Matter © 2026 All rights reserved</p>
+        </footer>
+    </div>
     <script src="js/shared/hamburger_menu.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="js/specific/contact.js"></script>
