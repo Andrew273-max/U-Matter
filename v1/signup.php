@@ -20,7 +20,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     move_uploaded_file($profile_pic_tmp, $profile_pic_path);
 
-    $proof_eligibility = file_get_contents($_FILES['proof_eligibility']['tmp_name']);
+    $proof_name = $_FILES['proof_eligibility']['name'];
+    $proof_tmp = $_FILES['proof_eligibility']['tmp_name'];
+    $proof_path = "uploads/" . time() . "_" . $proof_name;
+
+    move_uploaded_file($proof_tmp, $proof_path);
 
     $sql = "INSERT INTO accounts
     (first_name, last_name, phone_number, email, pass, profile_pic, proof_eligibility)
@@ -36,16 +40,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email,
         $password,
         $profile_pic_path,
-        $proof_eligibility
+        $proof_path,
     );
 
     if ($stmt->execute()) {
 
-        echo "Account created successfully";
+    header("Location: login.php");
+    exit();
+    $message = "Account created successfully";
 
     } else {
 
-        echo "Signup failed";
+    $message = "Signup failed";
 
     }
 
@@ -66,11 +72,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="styles.css">
     <link rel ="icon" type="image" href="assets/icon.png">
 </head>
-<body class="other">
+<body>
+<div class="app">
     <header>
         <div class="topnav">
             <a href="index.html" class="active"><img class="back" src="assets/icon.png"></a>
             <div id="myLinks">
+                <a href="index.html">Home</a>
                 <a href="login.php" id="authLink">Log in</a>
                 <a href="fund_list.php">Funds</a>
                 <a href="event_list.php">Events</a>
@@ -114,16 +122,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="file" name="proof_eligibility" id="proof_eligibility" required>
             <br><br>
 
-            <button class="account" type="submit">Create Account</button>
+            <button class="message" type="submit">Create Account</button>
         </form>
     </div>
 
     <h4>Already have an account?</h4>
-    <a class="account" href="login.php">Log in</a>
+    <a class="message" href="login.php">Log in</a>
+
+    <?php if (!empty($message)) : ?>
+
+    <h4 class="success-message">
+        <?php echo $message; ?>
+    </h4>
+
+    <?php endif; ?>
+    <br>
 
     <footer>
         <p>U Matter © 2026 All rights reserved</p>
     </footer>
+</div>
 
 <script src="js/shared/hamburger_menu.js"></script>
 </body>
