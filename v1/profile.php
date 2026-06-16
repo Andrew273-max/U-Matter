@@ -41,11 +41,13 @@ $user = $result->fetch_assoc();
     <link rel="stylesheet" href="styles.css">
     <link rel ="icon" type="image" href="assets/icon.png">
 </head>
-<body class="other">
+<body>
+<div class="app">
     <header>
         <div class="topnav">
             <a href="index.html" class="active"><img class="back" src="assets/icon.png"></a>
             <div id="myLinks">
+                <a href="index.html">Home</a>
                 <a href="login.php" id="authLink">Log in</a>
                 <a href="fund_list.php">Funds</a>
                 <a href="event_list.php">Events</a>
@@ -57,7 +59,7 @@ $user = $result->fetch_assoc();
         </div>
     </header>
 
-    <br><img class="pic" src="<?php echo $user['profile_pic']; ?>">
+    <br><div class="pic"><img src="<?php echo $user['profile_pic']; ?>", alt='profile picture'></div>
         
     <h2>Your account</h2>
 
@@ -77,35 +79,16 @@ $user = $result->fetch_assoc();
         <h5>Bio</h5>
         <p>Displays your short bio. Will be updated with user input.
            Can contain anything: from personal info to the user's accomplishments.
-           Function will be implemented in the future development.</p>
-
-        <a class="account" href="logout.php">Logout</a>
+           Function will be implemented in the future development.</p>        
     </section>
+
+    <a class="message" href="logout.php">Logout</a>
 
     <br><footer>
         <p>U Matter © 2026 All rights reserved</p>
     </footer>
+</div>
 
     <script src="js/shared/hamburger_menu.js"></script>
 </body>
 </html>
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>U Matter - profile</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel ="icon" type="image" href="assets/icon.png">
-</head>
-<body class="profile">
-    <header>
-
-    </header>
-</body>
-</html> -->
