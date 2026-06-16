@@ -31,45 +31,56 @@ $event = $result->fetch_assoc();
     <link rel="stylesheet" href="styles.css">
     <link rel ="icon" type="image" href="assets/icon.png">
 </head>
-<body class="info">
-    <header>
-        <div class="topnav">
-            <a href="index.html" class="active"><img class="back" src="assets/icon.png"></a>
-            <div id="myLinks">
-                <a href="login.php id="authLink"">Log in</a>
-                <a href="fund_list.php">Funds</a>
-                <a href="event_list.php">Events</a>
-                <a href="contact.html">Contact us</a>
+<body>
+    <div class="second-app">
+        <header>
+            <div class="topnav">
+                <a href="index.html" class="active"><img class="back" src="assets/icon.png"></a>
+                <div id="myLinks">
+                    <a href="index.html">Home</a>
+                    <a href="login.php" id="authLink">Log in</a>
+                    <a href="fund_list.php">Funds</a>
+                    <a href="event_list.php">Events</a>
+                    <a href="contact.html">Contact us</a>
+                </div>
+                <a href="javascript:void(0);" class="menu" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
             </div>
-            <a href="javascript:void(0);" class="menu" onclick="myFunction()">
-                <i class="fa fa-bars"></i>
-            </a>
-        </div>
-    </header>
-    <div class="details-container">
-        <div class="top-section">
-            <div class="fund-event-info">
-                <h1><?php echo $event['name']; ?></h1><br>
+        </header>
+        <section class="fund-event-info">
+            <div class="top-section-info">
+                <div class="hero-text">
+                    <h3><?php echo $event['name']; ?></h3>
+                    <h5><?php echo date("d F H:i", strtotime($event['date_time'])); ?></h5>
+                </div>
+                <img 
+                    src="<?php echo $event['photo']; ?>" 
+                    alt="<?php echo $event['name']; ?>"
+                    class="hero-image">
 
-                <h2>Purpose of the event</h2>
+                <div class="overlay-hero"></div>
+            </div>
+            <div class="middle-left-info">
+                <h5>Are you one of the organizers?</h5>
+                <div class="btn"><a href="login.php">Log in</a></div>
+                
+                <h3>Purpose of the event</h3>
                 <p><?php echo $event['purpose']; ?></p>
 
-                <h2>Organizer</h2>
+                <h3>Organizer</h3>
                 <p><?php echo $event['organizer']; ?></p>
-
-                <h2>Date and time</h2>
-                <p><?php echo $event['date_time']; ?></p>
             </div>
-            <div class="event-image"></div>
-        </div>
-        <div class="description-section">
-            <h2>Activities at the event</h2>
-            <p><?php echo $event['description']; ?></p>
-        </div>
+            <div class="middle-right-info">
+                <h3>Activities at<br>the event</h3>
+                <p><?php echo $event['description']; ?></p><br>
+            </div>
+        </section>
+        <footer>
+            <p>U Matter © 2026 All rights reserved</p>
+        </footer>
     </div>
-    <footer>
-        <p>U Matter © 2026 All rights reserved</p>
-    </footer>
+
 <script src="js/shared/hamburger_menu.js"></script>
 </body>
 </html>
