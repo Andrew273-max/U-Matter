@@ -12,21 +12,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $purpose = $_POST['purpose'];
     $organizer = $_POST['organizer'];
     $description = $_POST['description'];
+    $eligibility_name = $_FILES['eligibility']['name'];
+
+    $eligibility_tmp = $_FILES['eligibility']['tmp_name'];
+
+    $eligibility_path = "uploads/" . time() . "_" . $eligibility_name;
+
+    move_uploaded_file($eligibility_tmp, $eligibility_path);
 
     $sql = "INSERT INTO funds
-    (name, fund_goal, end_date, purpose, organizer, description)
-    VALUES (?, ?, ?, ?, ?, ?)";
+    (name, fund_goal, end_date, purpose, organizer, description, eligibility)
+    VALUES (?, ?, ?, ?, ?, ?, ?)";
 
     $stmt = $conn->prepare($sql);
 
     $stmt->bind_param(
-        "sdssss",
+        "sdsssss",
         $name,
         $fund_goal,
         $end_date,
         $purpose,
         $organizer,
         $description,
+        $eligibility_path
     );
 
     if ($stmt->execute()) {
@@ -56,73 +64,78 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="styles.css">
     <link rel ="icon" type="image" href="assets/icon.png">
 </head>
-<body class="other">
-    <header>
-        <div class="topnav">
-            <a href="index.html" class="active"><img class="back" src="assets/icon.png"></a>
-            <!-- Navigation links (hidden by default) -->
-            <div id="myLinks">
-                <a href="login.php" id="authLink">Log in</a>
-                <a href="fund_list.php">Funds</a>
-                <a href="event_list.php">Events</a>
-                <a href="contact.html">Contact us</a>
+<body>
+    <div class="app">
+        <header>
+            <div class="topnav">
+                <a href="index.html" class="active"><img class="back" src="assets/icon.png"></a>
+                <!-- Navigation links (hidden by default) -->
+                <div id="myLinks">
+                    <a href="index.html">Home</a>
+                    <a href="login.php" id="authLink">Log in</a>
+                    <a href="fund_list.php">Funds</a>
+                    <a href="event_list.php">Events</a>
+                    <a href="contact.html">Contact us</a>
+                </div>
+                <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+                <a href="javascript:void(0);" class="menu" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
             </div>
-            <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-            <a href="javascript:void(0);" class="menu" onclick="myFunction()">
-                <i class="fa fa-bars"></i>
-            </a>
+        </header><br>
+
+        <h2>Create a new fund</h2>
+
+        <div class="login-form">
+            <form class ="login" method="POST" enctype="multipart/form-data">
+                
+                <label for="name">Name of the fund</label>
+                <input type="text" id="name" name="name" required>
+                <br><br>
+                            
+                <label for="organizer">Name of the organizer</label>
+                <input type="text" id="organizer" name="organizer" required>
+                <br><br>
+
+                <label for="purpose">Purpose of the fund</label>
+                <input type="text" id="purpose" name="purpose">
+                <br><br>
+                
+                <label for="fund_goal">Fund goal</label>
+                <input type="number" min="1" step=".01" id="fund_goal" name="fund_goal" placeholder="€" required>
+                <br><br>
+
+                <label for="end_date">End date</label>
+                <input type="date" id="end_date" name="end_date" min="2014-01-01">
+                <br><br>
+                            
+                <label for="description">Description of the fund</label>
+                <textarea id="description" name="description" placeholder="Tell us more about your fund..." required></textarea>
+                <br><br>
+
+                <label for="eligibility">Photo of where the money goes</label>
+                <input type="file" name="eligibility" id="eligibility" required>
+                <br><br>
+
+                <button class="message" type="submit">Send the application</button>
+            </form>
         </div>
-    </header><br>
 
-    <h2>Create a new fund</h2>
+        <?php if (!empty($message)) : ?>
 
-    <div class="login-form">
-        <form class ="login" method="POST" enctype="multipart/form-data">
-            
-            <label for="name">Name of the fund</label>
-            <input type="text" id="name" name="name" required>
-            <br><br>
-                        
-            <label for="organizer">Name of the organizer</label>
-            <input type="text" id="organizer" name="organizer" required>
-            <br><br>
+        <h4 class="success-message">
+            <?php header("Location: fund_list.php");
+            exit();
+            echo $message; ?>
+        </h4>
 
-            <label for="purpose">Purpose of the fund</label>
-            <input type="text" id="purpose" name="purpose">
-            <br><br>
-            
-            <label for="fund_goal">Fund goal</label>
-            <input type="number" min="1" step=".01" id="fund_goal" name="fund_goal" placeholder="€" required>
-            <br><br>
+        <?php endif; ?>
+        <br>
 
-            <label for="end_date">End date</label>
-            <input type="date" id="end_date" name="end_date" min="2014-01-01">
-            <br><br>
-                        
-            <label for="description">Description of the fund</label>
-            <textarea id="description" name="description" placeholder="Tell us more about your fund..." required></textarea>
-            <br><br>
-
-            <label for="eligibility">Verification Document</label>
-            <input type="file" name="eligibility" id="eligibility" required>
-            <br><br>
-
-            <button class="message" type="submit">Send the application</button>
-        </form>
+        <footer>
+            <p>U Matter © 2026 All rights reserved</p>
+        </footer>
     </div>
-
-    <?php if (!empty($message)) : ?>
-
-    <h4 class="success-message">
-        <?php echo $message; ?>
-    </h4>
-
-    <?php endif; ?>
-    <br>
-
-    <footer>
-        <p>U Matter © 2026 All rights reserved</p>
-    </footer>
 
 <script src="js/shared/hamburger_menu.js"></script>
 </body>
