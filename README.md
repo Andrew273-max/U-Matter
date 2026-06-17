@@ -53,18 +53,19 @@ The database is named `umatterdb` and contains three tables. SQL dump files are 
 - `first_name`, `last_name`, `phone_number`, `email`
 - `pass` (bcrypt hash via PHP `password_hash()`)
 - `profile_pic` (file path to uploaded image)
-- `proof_eligibility` (BLOB — verification document uploaded on signup)
+- `proof_eligibility` (file path to the uploaded document)
 
 **events**
 - `id` (PK, auto-increment)
 - `name`, `organizer`, `purpose`, `description`
 - `date_time`
+- `photo` (file path to uploaded picture of the event)
 
 **funds**
 - `id` (PK, auto-increment)
 - `name`, `organizer`, `purpose`, `description`
 - `fund_goal` (decimal), `end_date`
-- `eligibility` (BLOB — verification document uploaded on fund creation)
+- `eligibility` (file path to the uploaded document)
 
 
 -----------------------------------------------------------------------------------------------------
@@ -101,11 +102,11 @@ The database is named `umatterdb` and contains three tables. SQL dump files are 
 │   ├── img2.jpg
 │   └── img3.jpg
 ├── uploads/
-│   └── (user-uploaded profile pictures and documents)
-└── sql/
-    ├── umatterdb_accounts0.sql
-    ├── umatterdb_events0.sql
-    └── umatterdb_funds0.sql
+    └── (user-uploaded profile pictures and documents)
+    └── sql/
+        ├── umatterdb_accounts0.sql
+        ├── umatterdb_events0.sql
+        └── umatterdb_funds0.sql
 ```
 
 ----------------------------------------------------------------------------------------
