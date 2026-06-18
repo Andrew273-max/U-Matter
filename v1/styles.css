@@ -16,26 +16,13 @@
   overflow-x: clip;
   display: flex;
   flex-direction: column;
+  border: 1px solid black;
 }
-
-.second-app {
-  width: 100%;
-  max-width: 430px;   
-  min-height: 100vh;
-  margin: 0 auto;
-  background-image: url(assets/background-2.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  overflow-x: clip;
-  display: flex;
-  flex-direction: column;
-}
-
 
 body {
     font-family: "Inter", serif;    
     line-height: 1.6;
-    background-color:#ddd;
+    background:linear-gradient(#1360BF, #E2D637);
 }
 
 .second {
@@ -436,17 +423,21 @@ footer {
 }
 
 .middle-left-info .btn a {
-  background-color: black;
+  background-color: #f6f6f6;
+  color: black;
+}
+
+.org {
   color: #f6f6f6;
 }
 
 .middle-left-info h3, .middle-left-info p {
-  color: black;
+  color: #f6f6f6;
   text-align: left;
 }
 
 .middle-right-info h3, .middle-right-info p{
-  color: white;
+  color: black;
   justify-self: right;
   text-align:right;
 }
@@ -458,6 +449,7 @@ footer {
 .use {
   justify-self: right;
   margin-top:10px;
+  color: black;
 }
 
 .fund-info-pic {
@@ -465,10 +457,12 @@ footer {
   border-radius:10px;
   border: solid 1px black;
   justify-self: right;
+  margin-bottom:5%;
 }
 
 .fund-right-info p {
   text-align:right;
+  color: black
 }
 
 
