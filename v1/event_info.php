@@ -32,7 +32,7 @@ $event = $result->fetch_assoc();
     <link rel ="icon" type="image" href="assets/icon.png">
 </head>
 <body>
-    <div class="second-app">
+    <div class="app">
         <header>
             <div class="topnav">
                 <a href="index.html" class="active"><img class="back" src="assets/icon.png"></a>
@@ -62,7 +62,7 @@ $event = $result->fetch_assoc();
                 <div class="overlay-hero"></div>
             </div>
             <div class="middle-left-info">
-                <h5>Are you one of the organizers?</h5>
+                <h5 class="org">Are you one of the organizers?</h5>
                 <div class="btn"><a href="login.php">Log in</a></div>
                 
                 <h3>Purpose of the event</h3>
